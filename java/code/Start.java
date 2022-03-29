@@ -16,7 +16,7 @@ class Start {
 			Engine eth = new Engine("ETH/USD", "ETH-USD");
 			eth.start();
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 			} catch (Exception e) { }
 		}
 	}
@@ -47,7 +47,9 @@ class Engine extends Thread {
 			JsonObject object = reader.readObject().getJsonObject("data");
 			String s = object.getString("amount");
 			p.buy = new BigDecimal(s);
-		} catch (Exception e) { }
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		try {
 			String path = "/v2/prices/" + target + "/sell";
 			URL url = new URL(base + path);
@@ -56,7 +58,9 @@ class Engine extends Thread {
 			JsonObject object = reader.readObject().getJsonObject("data");
 			String s = object.getString("amount");
 			p.sell = new BigDecimal(s);
-		} catch (Exception e) { }
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
 		var factory = Persistence.createEntityManagerFactory("main");
 		var manager = factory.createEntityManager();
@@ -65,5 +69,6 @@ class Engine extends Thread {
 		manager.persist(p);
 		manager.getTransaction().commit();
 		manager.close();
+		factory.close();
 	}
 }

@@ -1,7 +1,7 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>boomerang</groupId>
-	<artifactId>boomerang-retriever</artifactId>
+	<groupId>quokka</groupId>
+	<artifactId>quokka-reader</artifactId>
 	<version>demo</version>
 	<properties>
 		<maven.compiler.source>18</maven.compiler.source>

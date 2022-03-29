@@ -7,7 +7,7 @@
 		<properties>
 
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://127.0.0.1/boomerang?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;useSSL=false" />
+				value="jdbc:mysql://127.0.0.1/quokka?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;useSSL=false" />
 			<property name="javax.persistence.jdbc.user"
 				value="james" />
 			<property name="javax.persistence.jdbc.password"
